@@ -1,8 +1,11 @@
-function Roll(firstRound, secondRound) {
-    return firstRound + secondRound;
+function Roll(firstStrike, secondStrike){
+
+}
+function GetScore(){
+    return 0;
 }
 
-
 module.exports = {
-    Roll: Roll
+    Roll: Roll,
+    GetScore: GetScore
 }

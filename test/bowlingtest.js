@@ -1,10 +1,11 @@
 var assert = require('assert');
-var bowlinggame = require('../bowlinggame');
+var BowlingGame = require('../bowlinggame');
 
-describe('stringcalculator', function() {
+describe('BowlingGame', function() {
   describe('#add()', function() {
     it('should do nothing if nothing done', function() {
-      assert.equal(3, bowlinggame.Roll(1,2));
+        BowlingGame.Roll(0,0)
+        assert.equal(0, BowlingGame.GetScore());
     });
   });
 });
