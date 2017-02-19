@@ -2,7 +2,7 @@ function Roll(firstStrike, secondStrike) {
     if (this.Frames == undefined)
         this.Frames = [];
     var frame = BuildFrame(firstStrike, secondStrike);
-    if (this.Frames.length == 10 && (!this.Frames[9].isSpare && !this.Frames[9].isStrike))
+    if (this.Frames.length >= 10 && (!this.Frames[9].isSpare && !this.Frames[9].isStrike))
         throw "No more than 10 frames in a game";
     this.Frames.push(frame);
 }
@@ -28,9 +28,9 @@ function GetScore() {
     var framesToConsider = 0;
     if (this.Frames.length >= 10)
         framesToConsider = 10;
-    else{
+    else {
         framesToConsider = this.Frames.length;
-        if (this.Frames[this.Frames.length-1].isSpare || this.Frames[this.Frames.length-1].isStrike)
+        if (this.Frames[this.Frames.length - 1].isSpare || this.Frames[this.Frames.length - 1].isStrike)
             return "X";
     }
     for (i = 0; i < framesToConsider; i++) {
